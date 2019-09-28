@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /nshop
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://hadoop01:3306/bap_dm
+    username: root
+    password: root
