@@ -21,8 +21,7 @@ public class NshopController {
         try {
             List<FlowStat> data = nshopService.findFlows();
             if(data!=null ){
-                 result = new ResultBean( data);
-
+                 result = new ResultBean(data);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,11 +38,13 @@ public class NshopController {
             List<Map<String,String>> data = nshopService.findFlowup();
             if(data!=null ){
                 result = new ResultBean(data);
-
             }
         } catch (Exception e) {
             e.printStackTrace();
-            result = new ResultBean(e);
+            result = new ResultBean();
+            result.setCode(-1);
+            result.setData(null);
+            result.setMsg("failed");
 
         }
         return result;
