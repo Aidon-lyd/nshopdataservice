@@ -1,6 +1,6 @@
 package com.nshop.service;
 
-import com.nshop.pojo.FlowStat;
+import com.nshop.entry.FlowStat;
 
 import java.util.List;
 import java.util.Map;

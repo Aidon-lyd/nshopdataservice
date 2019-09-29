@@ -1,6 +1,6 @@
 package com.nshop.mapper;
 
-import com.nshop.pojo.FlowStat;
+import com.nshop.entry.FlowStat;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

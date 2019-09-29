@@ -1,4 +1,4 @@
-package com.nshop.bean;
+package com.nshop.entry;
 
 public class FlowStat {
     private int customer_genger;

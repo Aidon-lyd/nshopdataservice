@@ -1,7 +1,7 @@
 package com.nshop.service.impl;
 
 import com.nshop.mapper.NshopMapper;
-import com.nshop.pojo.FlowStat;
+import com.nshop.entry.FlowStat;
 import com.nshop.service.NshopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.Map;
 @Service
 public class NshopServiceImpl implements NshopService {
 
-    @Autowired
+    @Autowired(required = false)
     private NshopMapper nshopMapper;
     @Override
     public List<FlowStat> findFlows() {

@@ -1,8 +1,7 @@
 package com.nshop.controller;
-
-import com.nshop.pojo.FlowStat;
-import com.nshop.pojo.Result;
+import com.nshop.entry.FlowStat;
 import com.nshop.service.NshopService;
+import com.nshop.util.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,34 +16,34 @@ public class NshopController {
     private NshopService nshopService;
 
     @RequestMapping("/findFlows")
-    public Result findFlows(){
-        Result result=null;
+    public ResultBean findFlows(){
+        ResultBean result=null;
         try {
             List<FlowStat> data = nshopService.findFlows();
             if(data!=null ){
-                 result = Result.getresult(200, "查询成功", data);
+                 result = new ResultBean( data);
 
             }
         } catch (Exception e) {
             e.printStackTrace();
-             result = Result.getresult(500, "查询失败", null);
+             result = new ResultBean(e);
 
         }
         return result;
     }
 
     @RequestMapping("/findFlowup")
-    public Result findFlowup(){
-        Result result=null;
+    public ResultBean findFlowup(){
+        ResultBean result=null;
         try {
             List<Map<String,String>> data = nshopService.findFlowup();
             if(data!=null ){
-                result = Result.getresult(200, "查询成功", data);
+                result = new ResultBean(data);
 
             }
         } catch (Exception e) {
             e.printStackTrace();
-            result = Result.getresult(500, "查询失败", null);
+            result = new ResultBean(e);
 
         }
         return result;

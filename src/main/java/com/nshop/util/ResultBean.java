@@ -1,4 +1,4 @@
-package com.nshop.bean;
+package com.nshop.util;
 
 import lombok.Data;
 
@@ -15,7 +15,7 @@ public class ResultBean<T> implements Serializable {
 
 	public static final int NO_LOGIN = -1;
 
-	public static final int SUCCESS = 0;
+	public static final int SUCCESS = 200;
 
 	public static final int CHECK_FAIL = 1;
 
@@ -32,7 +32,7 @@ public class ResultBean<T> implements Serializable {
 	/**
 	 * 接口返回码, 0表示成功, 其他看对应的定义
 	 * 推荐做法:
-	 * 0   : 成功
+	 * 200   : 成功
 	 * >0 : 表示已知的异常(例如提示错误等, 需要调用地方单独处理) 
 	 * <0 : 表示未知的异常(不需要单独处理, 调用方统一处理)
 	 */
