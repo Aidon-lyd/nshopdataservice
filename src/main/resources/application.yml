@@ -5,6 +5,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://hadoop01:3306/bap_dm
+    url: jdbc:mysql://10.0.88.247:3306/ads_nshop
     username: root
-    password: root
+    password: 123456
