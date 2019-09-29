@@ -17,7 +17,7 @@ public class HelloController {
     @Autowired
     StudentInfo studentInfo;
 
-    @Autowired
+    @Autowired(required = false)
     StuMapper stuMapper;
 
     @RequestMapping("/hello")
