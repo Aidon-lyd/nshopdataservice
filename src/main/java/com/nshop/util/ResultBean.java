@@ -1,6 +1,5 @@
 package com.nshop.util;
 
-import lombok.Data;
 
 import java.io.Serializable;
 
@@ -8,7 +7,6 @@ import java.io.Serializable;
  * 返回对象包装类(带泛型)
  * 
  */
-@Data
 public class ResultBean<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -37,6 +35,30 @@ public class ResultBean<T> implements Serializable {
 	 * <0 : 表示未知的异常(不需要单独处理, 调用方统一处理)
 	 */
 	private int code = SUCCESS;
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
 
 	/**
 	 * 返回的数据
