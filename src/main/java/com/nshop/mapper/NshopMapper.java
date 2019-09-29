@@ -11,11 +11,11 @@ import java.util.Map;
 @Mapper
 public interface NshopMapper {
 
-    @Select("select customer_genger customer_genger,age_ranger age_ranger,max(visit_avg_duration) visit_avg_duration ,max(visit_avg_counts) visit_avg_counts,bdp_day from g1_platform_flow_stat GROUP BY customer_genger,age_ranger,bdp_day")
+    @Select("select customer_genger customer_genger,age_ranger age_ranger,max(visit_avg_duration) visit_avg_duration ,max(visit_avg_counts) visit_avg_counts,bdp_day from platform_flow_stat_g1 GROUP BY customer_genger,age_ranger,bdp_day")
     List<FlowStat> findFlows();
 
 
-    @Select("select * from g1_flowpu_stat")
+    @Select("select * from flowpu_stat_g1")
     List<Map<String,String>> findFlowup();
 
 }
