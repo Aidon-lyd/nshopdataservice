@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,9 +22,14 @@ public class BusiStatController {
 
 
     @RequestMapping("/age")
-    public ResultBean<List<NshopBusiStat>> queryByAge() {
+    public ResultBean<List<String>> queryByAge() {
         List<NshopBusiStat> busiStatList = busiStatMapper.queryByAge();
-        return new ResultBean<>(busiStatList);
+
+        List<String> list = new ArrayList<>();
+        for (NshopBusiStat nshopBusiStat : busiStatList) {
+            list.add(nshopBusiStat.queryByAge());
+        }
+        return new ResultBean<>(list);
     }
 
 }
