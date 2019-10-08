@@ -1,10 +1,10 @@
 server:
-  port: 8080
+  port: 8888
   servlet:
     context-path: /nshop
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.0.88.247:3306/ads_nshop?useSSL=false
+    url: jdbc:mysql://10.0.88.247:3306/ads_nshop?useSSL=false&useUnicode=true&characterEncoding=utf-8
     username: root
     password: 123456
