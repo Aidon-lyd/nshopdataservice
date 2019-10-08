@@ -20,7 +20,7 @@ public interface SearchMapper {
     @Select("select \n" +
         "search_keys,\n" +
         "search_records\n" +
-        "from nshop_ads_searchkeys20190902\n" +
+        "from nshop_ads_searchkeys\n" +
         "where\n" +
         "gender is null \n" +
         "and age_range is null \n" +
