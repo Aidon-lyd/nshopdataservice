@@ -13,7 +13,7 @@ public interface SexRateMapper {
             "complaint_rate\n" +
             "from \n" +
             "ads_nshop.ads_nshop_risk_mgt\n" +
-            "where product_type='20104'\n" +
+            "where product_type='二级分类_20104'\n" +
             "and age_range is null\n" +
             "and customer_gender is not null\n" +
             ";")
