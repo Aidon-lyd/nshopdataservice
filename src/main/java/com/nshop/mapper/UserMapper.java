@@ -12,19 +12,18 @@ public interface UserMapper {
 
     @Select("SELECT age_range,SUM(pay_amounts) AS pay_amounts FROM ads_nshop_pay_stat_gsets WHERE age_range != '\\\\N' GROUP BY age_range")
     public List<AgeEcharts> getAgeData();
-
     @Select("SELECT COUNT(*) AS num FROM ads_nshop_pay_stat GROUP BY customer_gender;")
     public List<SexEcharts> getSexData();
 
     @Select("SELECT customer_area_code,SUM(pay_amounts) AS pay_amounts FROM ads_nshop_pay_stat_topn GROUP BY customer_area_code;")
     public List<AreaEcharts> getAreaData();
 
-    @Select("\"SELECT pay_type, SUM(pay_amounts) AS pay_amounts FROM ads_nshop_pay_stat_topn GROUP BY pay_type;\"")
+    @Select("SELECT pay_type, SUM(pay_amounts) AS pay_amounts FROM ads_nshop_pay_stat_topn GROUP BY pay_type;")
     List<WayEcharts> getWayData();
 
 
 
-    //李鹤代码
+    //李赫代码
     @Select("SELECT user_count,launch_count,bdp_day FROM nshop_actlog WHERE network_type='';")
     public List<UserLog> listStus();
 
