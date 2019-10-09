@@ -18,18 +18,16 @@ public interface SearchMapper {
      */
 
     @Select("select \n" +
-        "search_keys,\n" +
-        "search_records\n" +
-        "from nshop_ads_searchkeys\n" +
-        "where\n" +
-        "gender is null \n" +
-        "and age_range is null \n" +
-        "and os is null \n" +
-        "and search_category is null\n" +
-        "and search_orders is null\n" +
-        "and manufacturer is null \n" +
-        "and area_code is null\n" +
-        "order by search_records desc\n" +
-        "limit 1,11;")
+            "search_keys, \n" +
+            "sum(search_records) search_records \n" +
+            "from ads_nshop.nshop_ads_searchkeys \n" +
+            "where search_keys !='' \n" +
+            "and gender is NULL \n" +
+            "and age_range is NULL \n" +
+            "and os is NULL \n" +
+            "and manufacturer is NULL \n" +
+            "and area_code is NULL \n" +
+            "group by search_keys \n" +
+            "order by sum(search_records) desc limit 10;")
     public List<SearchInfo> SearchAndCount();
 }
